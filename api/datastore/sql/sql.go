@@ -88,8 +88,8 @@ var tables = [...]string{`CREATE TABLE IF NOT EXISTS routes (
 );`,
 
 	`CREATE TABLE IF NOT EXISTS funcs (
-	id varchar(256) NOT NULL,
-	name varchar(256) NOT NULL,
+	id varchar(256) NOT NULL PRIMARY KEY,
+	name varchar(256) NOT NULL UNIQUE,
 	image varchar(256) NOT NULL,
 	format varchar(16) NOT NULL,
 	cpus int NOT NULL,
@@ -99,8 +99,7 @@ var tables = [...]string{`CREATE TABLE IF NOT EXISTS routes (
 	config text NOT NULL,
 	annotations text NOT NULL,
 	created_at varchar(256) NOT NULL,
-	updated_at varchar(256) NOT NULL,
-	PRIMARY KEY (name)
+	updated_at varchar(256) NOT NULL
 );`,
 }
 
